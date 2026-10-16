@@ -5,8 +5,8 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "1"
 spec:
+  backoffLimit: 0
   template:
-    backoffLimit: 0
     spec:
       containers:
         - name: waves-verify
