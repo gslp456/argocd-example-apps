@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-ui
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: api-ui
+  template:
+    metadata:
+      labels:
+        app: api-ui
+    spec:
+      containers:
+        - image: gcr.io/google-samples/gb-frontend:v5
+          name: api-ui
+          ports:
+            - containerPort: 80
